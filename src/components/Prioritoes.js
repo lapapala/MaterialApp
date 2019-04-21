@@ -61,7 +61,7 @@ class TextFields extends React.Component {
           <ListItemIcon>
             <Reorder />
           </ListItemIcon>
-          <TextField  id="standard-dense" label="Add a new answer" className={classNames(classes.textField, classes.dense)} />
+          <TextField  id="standard-dense" placeholder="Add a new answer"  fullWidth />
         </ListItem>
         
       </List>
