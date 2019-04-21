@@ -8,16 +8,18 @@ import Divider from '@material-ui/core/Divider';
 
 
 
-const styles = {
+
+const styles  = theme => ({
   root: {
     width: '100%',
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
     alignItems: "center",
-    margin: "30px 0px"
-
+    margin: "30px 0px",
   },
+
+  
 
   fab: {
     '&:hover': {
@@ -42,14 +44,27 @@ const styles = {
     margin: 20,
     flexWrap: "wrap"
   }, 
+  menuItem: {
+    '&:focus': {
+      backgroundColor: "#2389c4",
+      color: "white",
+      borderColor: "#2389c4",
+      boxShadow: "none",      '& $primary, & $icon': {
+        color: theme.palette.common.white,
+      },
+    },
+  },
+  primary: {},
+  icon: {},
 
-};
+});
 
 function Types(props) {
   const { classes } = props;
 
   return (
     <div >
+     
       <div className={classes.root}>
 
         <Typography variant="subtitle1" gutterBottom> How are you feeling? </Typography>
@@ -57,11 +72,11 @@ function Types(props) {
         <div className={classes.mark}>
         <Typography variant="body1" gutterBottom> Awful</Typography>
 
-        <Fab className={classes.fab}>1</Fab>
-        <Fab className={classes.fab}>2</Fab>
-        <Fab className={classes.fab}>3</Fab>
-        <Fab className={classes.fab}>4</Fab>
-        <Fab className={classes.fab}>5</Fab>
+        <Fab className={`${classes.fab} ${classes.menuItem}`}>1</Fab>
+        <Fab className={`${classes.fab} ${classes.menuItem}`}>2</Fab>
+        <Fab className={`${classes.fab} ${classes.menuItem}`}>3</Fab>
+        <Fab className={`${classes.fab} ${classes.menuItem}`}>4</Fab>
+        <Fab className={`${classes.fab} ${classes.menuItem}`}>5</Fab>
 
         <Typography variant="body1" gutterBottom> Amazing! </Typography>
         </div>
